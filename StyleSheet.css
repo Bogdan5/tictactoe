@@ -1,0 +1,169 @@
+﻿body {
+    background-color: rgb(217, 255, 102);
+    font-family: 'Bauhaus 93';
+}
+
+    body > div > div:first-child {
+        width: 400px;
+        float: left;
+    }
+
+    body > div > div:nth-child(2) {
+        width: 350px;
+        float: left;
+        padding: 0 20px;
+    }
+
+/*buttons div------------------------------------------------------------------------*/
+.row {
+    margin: 10px 0;
+    text-align: center;
+    height: 45px;
+    width: 100%;
+}
+
+button {
+    background-color: inherit;
+    border-radius: 15px;
+    height: 35px;
+    width: 100px;
+    font-size: 15px;
+    outline: none;
+    margin: 0 5px;
+    font-family: inherit;
+    border: 1px solid;
+}
+
+    button:not(.backgroundButton):hover {
+        background-color: dodgerblue;
+    }
+
+.backgroundButton {
+    border: none;
+    width: 120px;
+    background-color: inherit;
+}
+
+.invisible {
+    display: none;
+}
+
+canvas {
+    margin: 0;
+}
+
+.hidden {
+    z-index: -1;
+}
+
+.revealed {
+    z-index: 10;
+}
+
+/*the board where Xs and Ox are drawn-------------------------------------*/
+#tableDiv {
+    padding: 0;
+    position: relative;
+    font-size:0;
+}
+
+#tableDiv canvas {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+/*necessary to eliminate spaves between canvases*/
+#tableDiv > div {
+    font-size: 0;
+}
+/*borders that together create the grid*/
+[id^="myCanvas0"] {
+    border-bottom: 5px solid dodgerblue;
+}
+
+[id^="myCanvas1"] {
+    border-bottom: 5px solid dodgerblue;
+    border-top: 5px solid dodgerblue;
+}
+
+[id^="myCanvas2"] {
+    border-top: 5px solid dodgerblue;
+}
+
+#tableDiv>div> canvas:first-child {
+    border-right: 5px solid dodgerblue;
+}
+
+#tableDiv > div > canvas:nth-child(2) {
+    border-left: 5px solid dodgerblue;
+    border-right: 5px solid dodgerblue;
+}
+
+#tableDiv > div > canvas:last-child {
+    border-left: 5px solid dodgerblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#coverCanv {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#score {
+    width: 99%;
+    height: 100px;
+    border-collapse: collapse;
+    box-sizing: border-box;
+}
+
+    #score td {
+        border: 3px solid blue;
+        text-align: center;
+        width: 33%;
+    }
+
+    #score tr > td:first-child {
+        background-color: rgb(0, 153, 153);
+    }
+
+    #score tr > td:nth-child(2) {
+        background-color: rgb(0, 230, 230);
+    }
+
+    #score tr > td:nth-child(3) {
+        background-color: rgb(179, 255, 255);
+    }
+
+@media screen and (max-width: 480px) {
+    body {
+        position: relative;
+    }
+
+        body:first-child {
+            float: none;
+            position: absolute;
+            left: 0;
+        }
+
+    #tableDiv {
+        float: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}

@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Tic Tac Toe</title>
+    <link href="StyleSheet.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="JavaScript.js"></script>
+</head>
+<body>
+    <div>
+        <div>
+            <!-- the buttons grid on the left -->
+            <div style="min-height:100px;">
+                <div class="row">
+                    <button type="button" id="onePlayer" class="defaultButton" onclick="ticTacToe.setNoPlayers(1)">One player</button>
+                    <button class="backgroundButton">Number players</button>
+                    <button type="button" id="twoPlayers" onclick="ticTacToe.setNoPlayers(2)">Two players</button>
+                </div>
+                <div class="row invisible" id="order">
+                    <button type="button" id="first" onclick="ticTacToe.setComputerFirst(false)">Play first</button>
+                    <button type="button" class="backgroundButton">Choose order</button>
+                    <button type="button" id="second" onclick="ticTacToe.setComputerFirst(true)">Play second</button>
+                </div>
+                <div class="row invisible" id="difficulty">
+                    <button type="button" id="difficultyIs1" onclick="ticTacToe.setDifficulty(1)">Easy</button>
+                    <button type="button" id="difficultyIs2" onclick="ticTacToe.setDifficulty(2)">Medium</button>
+                    <button type="button" id="difficultyIs3" onclick="ticTacToe.setDifficulty(3)">Hard</button>
+                </div>
+                <div class="row invisible" id="start">
+                    <button type="button" id="startButton" onclick="ticTacToe.run()">Start game</button>
+                </div>
+
+            </div>
+            <!-- the score table -->
+            <div style="height:110px;width:100%;">
+                <table id="score">
+                    <tr>
+                        <td>Player 1</td>
+                        <td>Player 2</td>
+                        <td>Draws</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- the board where x and O are drawn -->
+        <div id="tableDiv">
+            <!--//----------->
+            <div>
+                <canvas id="myCanvas00" height="110" width="110" onclick="ticTacToe.userInput(0,0)">
+                </canvas><canvas id="myCanvas01" height="110" width="110" onclick="ticTacToe.userInput(0,1)">
+                </canvas><canvas id="myCanvas02" height="110" width="110" onclick="ticTacToe.userInput(0,2)">
+                </canvas>
+            </div><div>
+                <canvas id="myCanvas10" height="110" width="110"  onclick="ticTacToe.userInput(1,0)">
+                </canvas><canvas id="myCanvas11" height="110" width="110" onclick="ticTacToe.userInput(1,1)">
+                </canvas><canvas id="myCanvas12" height="110" width="110" onclick="ticTacToe.userInput(1,2)"></canvas>
+            </div><div>
+                <canvas id="myCanvas20" height="110" width="110" onclick="ticTacToe.userInput(2,0)">
+                </canvas><canvas id="myCanvas21" height="110" width="110" onclick="ticTacToe.userInput(2,1)">
+                </canvas><canvas id="myCanvas22" height="110" width="110" onclick="ticTacToe.userInput(2,2)"></canvas>
+            </div>
+            <!-- ---------------------- -->
+            <canvas class="hidden invisible" id="coverCanv" width="350" height="350" onclick="ticTacToe.canvasClick()"></canvas>
+        </div>
+    </div>
+</body>
+</html>
